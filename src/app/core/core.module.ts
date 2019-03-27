@@ -1,10 +1,17 @@
 import { NgModule, SkipSelf, Optional } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatToolbarModule, MatSidenavModule, MatButtonModule, MatIconModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+
+
+import { MatIconRegistry } from '@angular/material';
+import { DomSanitizer } from '@angular/platform-browser';
+import { loadSvgResources } from '../utils/svg.util';
+import { SharedModule } from '../shared/shared.module';
+
 
 
 @NgModule({
@@ -14,26 +21,28 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     SidebarComponent
   ],
   imports: [
-    CommonModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MatIconModule,
+    HttpClientModule,
+    SharedModule,
+    BrowserAnimationsModule,
   ],
   exports: [
-    MatSidenavModule,
     HeaderComponent, 
     FooterComponent, 
     SidebarComponent,
-    MatButtonModule,
-    MatIconModule,
+    HttpClientModule,
+    SharedModule,
+    BrowserAnimationsModule,
   ]
 })
 export class CoreModule {
-  constructor(@Optional() @SkipSelf() parent: CoreModule){
+  constructor(@Optional() @SkipSelf() parent: CoreModule,
+  iconRegistry: MatIconRegistry, 
+  sanitizer: DomSanitizer
+  ){
     if(parent){
       throw new Error('Module is exist');
     }
+    loadSvgResources(iconRegistry,sanitizer);
   }
 
  }
