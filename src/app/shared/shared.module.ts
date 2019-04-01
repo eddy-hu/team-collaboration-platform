@@ -9,6 +9,8 @@ import {
    MatInputModule,
    MatListModule,
    MatSlideToggleModule,
+   MatGridListModule,
+   MatDialogModule,
    
   } from '@angular/material';
 
@@ -25,6 +27,8 @@ import {
     MatInputModule,
     MatListModule,
     MatSlideToggleModule,
+    MatGridListModule,
+    MatDialogModule,
   ],
   exports: [
     CommonModule,
@@ -36,6 +40,8 @@ import {
     MatInputModule,
     MatListModule,
     MatSlideToggleModule,
+    MatGridListModule,
+    MatDialogModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
