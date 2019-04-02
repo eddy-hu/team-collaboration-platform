@@ -11,6 +11,10 @@ import {
    MatSlideToggleModule,
    MatGridListModule,
    MatDialogModule,
+   MatAutocompleteModule,
+   MatMenuModule,
+   MatCheckboxModule,
+   MatTooltipModule,
    
   } from '@angular/material';
 
@@ -29,6 +33,10 @@ import {
     MatSlideToggleModule,
     MatGridListModule,
     MatDialogModule,
+    MatAutocompleteModule,
+    MatMenuModule,
+    MatCheckboxModule,
+    MatTooltipModule,
   ],
   exports: [
     CommonModule,
@@ -42,6 +50,10 @@ import {
     MatSlideToggleModule,
     MatGridListModule,
     MatDialogModule,
+    MatAutocompleteModule,
+    MatMenuModule,
+    MatCheckboxModule,
+    MatTooltipModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

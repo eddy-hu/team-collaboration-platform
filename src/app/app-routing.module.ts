@@ -5,9 +5,9 @@ import { SharedModule } from './shared/shared.module';
 
 const routes: Routes = [
   
-  { path:'project', loadChildren:'./project/project.module#ProjectModule' },
     { path:'login', loadChildren:'./login/login.module#LoginModule' },
-  
+    { path:'project', loadChildren:'./project/project.module#ProjectModule' },
+    { path:'task', loadChildren:'./task/task.module#TaskModule' },
     {
       path: '',
       redirectTo: '',
