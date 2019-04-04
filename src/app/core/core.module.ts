@@ -12,6 +12,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { loadSvgResources } from '../utils/svg.util';
 import { SharedModule } from '../shared/shared.module';
 
+import 'hammerjs';
 
 
 @NgModule({
