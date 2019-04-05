@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
+import { AppRoutingModule } from '../app-routing.module';
 
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -25,6 +26,7 @@ import 'hammerjs';
     HttpClientModule,
     SharedModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
   ],
   exports: [
     HeaderComponent, 
@@ -33,6 +35,7 @@ import 'hammerjs';
     HttpClientModule,
     SharedModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
   ]
 })
 export class CoreModule {
