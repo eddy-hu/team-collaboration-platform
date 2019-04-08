@@ -1,4 +1,4 @@
-import { Component, OnInit , HostBinding} from '@angular/core';
+import { Component, OnInit , HostBinding, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
 import { MatDialog } from  '@angular/material';
 import { NewProjectComponent } from "../new-project/new-project.component";
 import { InviteComponent } from '../invite/invite.component';
@@ -10,7 +10,9 @@ import { listAnimmation } from 'src/app/anims/list.anim';
   selector: 'app-project-list',
   templateUrl: './project-list.component.html',
   styleUrls: ['./project-list.component.scss'],
-  animations: [slideToRight, listAnimmation]
+  animations: [slideToRight, listAnimmation],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+
 })
 export class ProjectListComponent implements OnInit {
 
@@ -36,26 +38,33 @@ export class ProjectListComponent implements OnInit {
     },
   
   ]
-  constructor(private dialog: MatDialog) { }
+  constructor(
+    private dialog: MatDialog,
+    private cd: ChangeDetectorRef,
+    ) { }
 
   ngOnInit() {
   }
 
   openNewProjectDialog(){
-    const dialogRef = this.dialog.open(NewProjectComponent,{data: {title: 'New Project'}}) //{} is for configuration {width: '100px', height: '100px' },
+    const dialogRef = this.dialog.open(NewProjectComponent,{data: {title: 'New Project'}}); //{} is for configuration {width: '100px', height: '100px' },
     dialogRef.afterClosed().subscribe(result => console.log(result));
+    this.cd.markForCheck();
   }
 
   launchInviteDialog(){
-    const dialogRef = this.dialog.open(InviteComponent) //{} is for configuration {width: '100px', height: '100px' },
+    const dialogRef = this.dialog.open(InviteComponent); //{} is for configuration {width: '100px', height: '100px' },
+    this.cd.markForCheck();
   }
 
   launchUpdateDialog(){
-    const dialogRef = this.dialog.open(NewProjectComponent,{data:{title: 'Update Project'}}) 
+    const dialogRef = this.dialog.open(NewProjectComponent,{data:{title: 'Update Project'}});
+    this.cd.markForCheck();
   }
 
   launchConfirmDialog(){
-    const dialogRef = this.dialog.open(ConfirmDialogComponent,{data:{title: 'Delete Project', content: 'Are you sure you want to delete?'}}) 
+    const dialogRef = this.dialog.open(ConfirmDialogComponent,{data:{title: 'Delete Project', content: 'Are you sure you want to delete?'}});
+    this.cd.markForCheck();
   }
 
 

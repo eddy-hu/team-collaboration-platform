@@ -36,7 +36,11 @@ import 'hammerjs';
     SharedModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-  ]
+  ],
+  providers: [
+    {provide: 'BASE_CONFIG', useValue: 'http://localhost:4200'},//config properties
+
+  ],
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parent: CoreModule,
