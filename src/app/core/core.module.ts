@@ -14,6 +14,8 @@ import { loadSvgResources } from '../utils/svg.util';
 import { SharedModule } from '../shared/shared.module';
 
 import 'hammerjs';
+import { map, take } from 'rxjs/operators'
+import { ServicesModule } from '../services/services.module';
 
 
 @NgModule({
@@ -27,6 +29,7 @@ import 'hammerjs';
     SharedModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    ServicesModule.forRoot(),
   ],
   exports: [
     HeaderComponent, 
@@ -36,6 +39,7 @@ import 'hammerjs';
     SharedModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+
   ],
   providers: [
     {provide: 'BASE_CONFIG', useValue: 'http://localhost:4200'},//config properties

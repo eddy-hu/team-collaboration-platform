@@ -1,5 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { 
    MatToolbarModule,
    MatSidenavModule, 
@@ -20,13 +21,15 @@ import {
    MatNativeDateModule,
    MatSelectModule,
    
+   
   } from '@angular/material';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { DirectiveModule } from '../directive/directive.module';
+import { ImageListSelectComponent } from './image-list-select/image-list-select.component';
 
 
 @NgModule({
-  declarations: [ConfirmDialogComponent],
+  declarations: [ConfirmDialogComponent, ImageListSelectComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -48,6 +51,8 @@ import { DirectiveModule } from '../directive/directive.module';
     MatNativeDateModule,
     MatSelectModule,
     DirectiveModule,
+    FormsModule,
+    ReactiveFormsModule,
 
   ],
   exports: [
@@ -71,6 +76,8 @@ import { DirectiveModule } from '../directive/directive.module';
     MatNativeDateModule,
     MatSelectModule,
     DirectiveModule,
+    FormsModule,
+    ReactiveFormsModule,
 
   ],
   entryComponents: [

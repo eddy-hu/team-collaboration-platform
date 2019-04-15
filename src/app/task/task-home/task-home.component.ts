@@ -21,6 +21,7 @@ export class TaskHomeComponent implements OnInit {
     {
       id: 1,
       name: 'Open',
+      order: 1,
       tasks: [
         {
           id: 1,
@@ -64,6 +65,7 @@ export class TaskHomeComponent implements OnInit {
 
     {
       id: 2,
+      order: 2,
       name: 'In Progress',
       tasks: [
         {
@@ -123,6 +125,7 @@ export class TaskHomeComponent implements OnInit {
 
     {
       id: 3,
+      order: 3,
       name: 'Done',
       tasks: [
         {
@@ -195,6 +198,28 @@ export class TaskHomeComponent implements OnInit {
 
   launchNewTaskListDialog(){
     const dialogRef = this.dialog.open(NewTaskListComponent,{data:{title: 'New List'}}) ;
+  }
+
+  handleMove(srcData, list){
+    switch(srcData.tag){
+      case 'task-item':
+        console.log('handling item');
+        break;
+      case 'task-list':
+        const srcList = srcData.data;
+        const tempOrder =  srcList.order;
+        srcList.order = list.order;
+        list.order = tempOrder;
+        console.log('handling list');
+        console.log('srcList.order'+srcList.order+'list.order'+list.order);
+        break;
+      default:
+        break;
+      }
+  }
+
+  handleQuickTask(desc: string){
+    console.log(desc);
   }
 
 }

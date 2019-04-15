@@ -2,14 +2,12 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 export interface DragData{
-  tad: string;
+  tag: string;
   data: any;
 
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class DragDropService {
   
   private _dragData = new BehaviorSubject<DragData>(null);
