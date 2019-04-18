@@ -16,12 +16,17 @@ export class RegisterComponent implements OnInit {
       name: [],
       password: [],
       repeat: [],
+      dateOfBirth: [],
 
     })
   }
 
-  onSubmit(){
-    console.log('submitted');
+  onSubmit({value,valid}, ev: Event){
+    ev.preventDefault();
+    if(!valid){
+      return;
+    }
+    console.log(value);
   }
 
 }

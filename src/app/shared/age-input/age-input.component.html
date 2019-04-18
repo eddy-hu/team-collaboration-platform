@@ -1,0 +1,30 @@
+<div [formGroup]="form"class="age-input">
+
+  <div>
+  <mat-form-field class="full-width">
+    <mat-error>Date invalid</mat-error>
+    <input matInput [matDatepicker]="birthDatepicker"   formControlName="birthday" placeholder="Birthday"/>
+    <mat-datepicker-toggle matSuffix [for]="birthDatepicker"></mat-datepicker-toggle>
+  </mat-form-field>
+  <mat-datepicker touchUi="true" #birthDatepicker></mat-datepicker>
+  </div>
+
+  <mat-form-field formGroupName="age">
+    <div class="age-num">
+      <mat-form-field>
+        <input type="number" placeholder="Age" matInput formControlName="ageNum">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-button-toggle-group formControlName="ageUnit">
+        <mat-button-toggle *ngFor="let unit of ageUnit" [value]="unit.value">
+          {{unit.label}}
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+    <mat-error>Age or date invalid</mat-error>
+  </mat-form-field>
+
+
+</div>
