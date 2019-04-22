@@ -21,9 +21,17 @@ export class PorjectService {
 
     //POST
     add(project: Project){
+        project.id=null;
         const uri = `${this.config.uri}/${this.domain}`;
         return this.http
         .post(uri,JSON.stringify(project),{headers: this.headers});
     }
 
+
+     //PUT
+    update(project: Project){
+        const uri = `${this.config.uri}/${this.domain}`;
+        return this.http
+        .post(uri,JSON.stringify(project),{headers: this.headers});
+    }
 }
