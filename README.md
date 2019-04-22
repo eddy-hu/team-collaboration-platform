@@ -1,3 +1,5 @@
+![alt text](https://github.com/eddy-hu/team-collaboration-platform/blob/master/src/assets/images/kanban.JPG "Capture")
+
 # TeamCollaborationPlatform
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
