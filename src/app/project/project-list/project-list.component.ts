@@ -5,7 +5,7 @@ import { InviteComponent } from '../invite/invite.component';
 import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
 import { slideToRight } from '../../anims/router.anim';
 import { listAnimmation } from 'src/app/anims/list.anim';
-import { PorjectService } from 'src/app/services/project.service';
+import { ProjectService } from 'src/app/services/project.service';
 
 @Component({
   selector: 'app-project-list',
@@ -42,7 +42,7 @@ export class ProjectListComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private cd: ChangeDetectorRef,
-    private service$: PorjectService,
+    private service$: ProjectService,
     ) { }
 
   ngOnInit() {
@@ -51,7 +51,11 @@ export class ProjectListComponent implements OnInit {
 
   openNewProjectDialog(){
     const dialogRef = this.dialog.open(NewProjectComponent,{data: {title: 'New Project'}}); //{} is for configuration {width: '100px', height: '100px' },
-    dialogRef.afterClosed().subscribe(result => console.log(result));
+    dialogRef.afterClosed().
+    subscribe(project => {
+      this.service$.add(project);
+      console.log(project);
+    });
     this.cd.markForCheck();
   }
 

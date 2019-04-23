@@ -5,7 +5,7 @@ import { map,mergeMap, count, switchMap } from "rxjs/operators";
 import { Observable, from  } from 'rxjs';
 
 @Injectable()
-export class PorjectService {
+export class ProjectService {
   private readonly domain = "projects";
   private headers = new HttpHeaders({
     "Content-Type": "application/json"

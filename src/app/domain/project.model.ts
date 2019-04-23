@@ -3,7 +3,7 @@ export interface Project{
     name: string;
     desc?: string;
     coverImg: string;
-    taskLists?: string[];//list id
+    taskLists?: string[];//tasklist id
     members?: string[];// members id
 
 }
