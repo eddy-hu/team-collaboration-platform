@@ -14,8 +14,12 @@ import { loadSvgResources } from '../utils/svg.util';
 import { SharedModule } from '../shared/shared.module';
 
 import 'hammerjs';
-import { map, take } from 'rxjs/operators'
+import { map, take } from 'rxjs/operators';
+import { from } from 'rxjs';
 import { ServicesModule } from '../services/services.module';
+
+
+
 
 
 @NgModule({
@@ -42,7 +46,7 @@ import { ServicesModule } from '../services/services.module';
 
   ],
   providers: [
-    {provide: 'BASE_CONFIG', useValue: 'http://localhost:4200'},//config properties
+    {provide: 'BASE_CONFIG_URI', useValue: 'http://localhost:3000'},//config properties
 
   ],
 })

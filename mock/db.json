@@ -1,0 +1,18 @@
+{
+    "projects": [
+        {
+            "id": "1",
+            "name": "Project sample 1",
+            "desc": "This is a sample project",
+            "coverImg": "assets/images/covers/nokia-cpc.png",
+            "members": ["1","2"]
+        },
+        {
+            "id": "2",
+            "name": "Project sample 2",
+            "desc": "This is a sample project",
+            "coverImg": "assets/images/covers/nokia-nnvcp.png",
+            "members": ["1"]
+        }
+    ]
+}
